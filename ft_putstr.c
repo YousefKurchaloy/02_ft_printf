@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:40:41 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/18 21:19:54 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:00:49 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putstr(char *str, unsigned int *counter)
 {
-	if(str == NULL)
+	if (str == NULL)
 	{
 		ft_putstr("(null)", counter);
-		return;
+		return ;
 	}
 	while (*str)
 	{

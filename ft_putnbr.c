@@ -6,13 +6,13 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:42:43 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/17 15:04:45 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:38:30 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, int base, int hexcase, unsigned int *counter)
+void	ft_putnbr(long n, int base, int hexcase, unsigned int *counter)
 {
 	long	num;
 
@@ -24,7 +24,7 @@ void	ft_putnbr(int n, int base, int hexcase, unsigned int *counter)
 	}
 	while (num >= base)
 	{
-		ft_putnbr(num / base, base, 0, counter);
+		ft_putnbr(num / base, base, hexcase, counter);
 		num = num % base;
 	}
 	if (num < 10)
