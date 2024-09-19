@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:27:21 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/17 14:52:59 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/18 21:22:26 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@
 void	ft_putchar(char c, unsigned int *counter);
 void	ft_putstr(char *str, unsigned int *counter);
 void	ft_putnbr(int n, int base, int hexcase, unsigned int *counter);
+int     ft_printf(const char *str, ...);
 #endif
-

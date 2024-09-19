@@ -12,31 +12,52 @@
 
 #include "ft_printf.h"
 
-void	ft_pf_format(char c, unsigned int *counter)
+void ft_pf_format(char c, va_list args, unsigned int *counter)
 {
 	if (c == 'c')
-		ft_putchar(c, counter);
+		ft_putchar(va_arg(args, int), counter);
 	else if (c == 's')
-		ft_putstr(c, counter);
+		ft_putstr(va_arg(args, char *), counter);
 	else if (c == 'd' || c == 'i')
-		ft_putnbr(c, 10, 0, counter);
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
-	unsigned int	*counter;
-
-	va_start(args, format);
-	*counter = 0;
-	while(*format)
+		ft_putnbr(va_arg(args, int), 10, 0, counter);
+	else if (c == 'u')
+		ft_putnbr(va_arg(args, unsigned int), 10, 0, counter);
+	else if (c == 'x')
+		ft_putnbr(va_arg(args, int), 16, 0, counter);
+	else if (c == 'X')
+		ft_putnbr(va_arg(args, int), 16, 1, counter);
+	else if (c == 'p')
 	{
-		if(format == '%')
-		{
-
-
-		}
-		format++;
+		ft_putstr("0x", counter);
+		ft_putnbr(va_arg(args, unsigned long), 16, 0, counter);
 	}
+	else if (c == '%')
+		ft_putchar('%', counter);
 }
 
+int ft_printf(const char *str, ...)
+{
+	va_list args;
+	unsigned int counter;
+
+	if (!str)
+		return (-1);
+	va_start(args, str);
+	counter = 0;
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			ft_pf_format(*str, args, &counter);
+			str++;
+		}
+		else
+		{
+			ft_putchar(*str, &counter);
+			str++;
+		}
+	}
+	va_end(args);
+	return (counter);
+}
