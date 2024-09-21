@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthexp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 23:27:21 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/21 13:04:06 by yalshish         ###   ########.fr       */
+/*   Created: 2024/09/21 12:43:36 by yalshish          #+#    #+#             */
+/*   Updated: 2024/09/21 13:03:47 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-
-void	ft_putchar(char c, unsigned int *counter);
-void	ft_putstr(char *str, unsigned int *counter);
-void	ft_putnbr(long n, int base, int hexcase, unsigned int *counter);
-void	ft_puthexp(unsigned long ptr, unsigned int *counter);
-int	ft_printf(const char *str, ...);
-#endif
+void ft_puthexp(unsigned long ptr, unsigned int *counter)
+{
+    if (ptr == 0)
+    {
+        ft_putstr("(nil)", counter);
+        return;
+    }
+    ft_putstr("0x", counter);
+    ft_putnbr(ptr, 16, 0, counter);
+}

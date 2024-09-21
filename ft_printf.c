@@ -6,13 +6,13 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:26:16 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/19 17:40:20 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/21 13:04:16 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pf_format(char c, va_list args, unsigned int *counter)
+void ft_pf_format(char c, va_list args, unsigned int *counter)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(args, int), counter);
@@ -27,23 +27,15 @@ void	ft_pf_format(char c, va_list args, unsigned int *counter)
 	else if (c == 'X')
 		ft_putnbr(va_arg(args, unsigned int), 16, 1, counter);
 	else if (c == 'p')
-	{
-		// if(va_arg(args, unsigned long) == 0)
-		// 	ft_putstr("(nil)", counter);
-		// else
-		// {
-			ft_putstr("0x", counter);
-			ft_putnbr(va_arg(args, unsigned long), 16, 0, counter);
-		// }
-	}
+		ft_puthexp(va_arg(args, unsigned long), counter);
 	else if (c == '%')
 		ft_putchar('%', counter);
 }
 
-int	ft_printf(const char *str, ...)
+int ft_printf(const char *str, ...)
 {
-	va_list			args;
-	unsigned int	counter;
+	va_list args;
+	unsigned int counter;
 
 	if (!str)
 		return (-1);
