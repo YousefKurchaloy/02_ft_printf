@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:27:21 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/21 13:04:06 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/28 04:15:36 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 
 void	ft_putchar(char c, unsigned int *counter);
 void	ft_putstr(char *str, unsigned int *counter);
-void	ft_putnbr(long n, int base, int hexcase, unsigned int *counter);
-void	ft_puthexp(unsigned long ptr, unsigned int *counter);
-int	ft_printf(const char *str, ...);
+void	ft_putnbr(long long n, int base, int hexcase, unsigned int *counter);
+void	ft_puthexp(unsigned long ptr_address, unsigned int *counter);
+void	ft_puthex(unsigned long n, unsigned int *counter);
+int		ft_printf(const char *str, ...);
+void	pf_flags(const char **str, unsigned int *counter);
+
 #endif

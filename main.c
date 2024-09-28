@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:01:19 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/21 13:03:36 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/28 04:15:49 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int main(int argc, char **argv)
 {
-	unsigned long long counter;
+	int counter;
 	void *num;
 
-	counter = -2147483647;
+	counter = 2147483646;
 	num = &counter;
-	ft_printf("pointer: %p\n", num);
-	printf("og pf pointer: %p\n", num);
+	ft_printf("ft_printf: %  +   d\n", counter);
+	printf("printf:%d\n", counter);
 	return (counter);
 }

@@ -6,15 +6,15 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:42:43 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/21 13:04:01 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/09/28 02:46:00 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_putnbr(long n, int base, int hexcase, unsigned int *counter)
+void	ft_putnbr(long long n, int base, int hexcase, unsigned int *counter)
 {
-	long num;
+	long long	num;
 
 	num = n;
 	if (num < 0)
