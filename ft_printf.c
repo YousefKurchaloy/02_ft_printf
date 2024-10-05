@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:26:16 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/28 04:22:05 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/10/05 10:53:31 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_pf_format(char c, va_list args, unsigned int *counter)
 	else if (c == '%')
 		ft_putchar('%', counter);
 }
-
+#include <stdio.h>
 int	ft_printf(const char *str, ...)
 {
 	va_list			args;
@@ -46,7 +46,6 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			pf_flags(&str, &counter);
 			ft_pf_format(*str, args, &counter);
 		}
 		else
@@ -57,21 +56,3 @@ int	ft_printf(const char *str, ...)
 	return (counter);
 }
 
-void	pf_flags(const char **str, unsigned int *counter)
-{
-	char	last_flag;
-
-	last_flag = 0;
-	while(**str == '+' || **str == '#' || **str == ' ')
-	{
-		if(**str == ' ')
-			last_flag = ' ';
-		else if(**str == '+')
-			last_flag = '+';
-		else if(**str == '#')
-			last_flag = '#';
-		str++;
-		counter++;
-	}
-	return ;
-}

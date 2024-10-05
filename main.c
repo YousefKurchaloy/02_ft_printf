@@ -6,7 +6,7 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:01:19 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/28 04:15:49 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/10/05 11:28:16 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 
 int main(int argc, char **argv)
 {
-	int counter;
-	void *num;
+	int	num;
+	int	rtrn;
+	int ft_rtrn;
 
-	counter = 2147483646;
-	num = &counter;
-	ft_printf("ft_printf: %  +   d\n", counter);
-	printf("printf:%d\n", counter);
-	return (counter);
+	num = -100;
+	rtrn = printf("%p\n", &num);
+	ft_rtrn = ft_printf("%p\n", &num);
+	printf("return: %d %d\n", rtrn, ft_rtrn);
+	return (0);
 }
