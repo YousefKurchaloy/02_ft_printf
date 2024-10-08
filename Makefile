@@ -1,17 +1,19 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
-SRC = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_puthexp.c
+FLAGS = -Wall -Werror -Wextra
+SRCS = ft_printf.c ft_putchar.c ft_putstr.c ft_puthexp.c ft_putnbr.c
+OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
-OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-	ar rcs $(NAME) $(OBJ)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -c $(SRC)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
