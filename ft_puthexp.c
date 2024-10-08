@@ -6,12 +6,17 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 12:43:36 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/28 02:44:32 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/10/06 10:59:12 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// ft_puthexp is a function that takes an unsigned long integer
+// and a pointer to an unsigned integer.
+// ft_puthexp will print "0x"
+// followed by ptr_address's hexadecimal representation.
+// if "ptr_address" is 0, ft_puthexp will print "(nil)".
 void	ft_puthexp(unsigned long ptr_address, unsigned int *counter)
 {
 	if (ptr_address == 0)
@@ -23,6 +28,9 @@ void	ft_puthexp(unsigned long ptr_address, unsigned int *counter)
 	ft_puthex(ptr_address, counter);
 }
 
+// ft_puthex is a function that takes an unsigned long integer
+// and a pointer to an unsigned integer.
+// ft_puthex will print the number in hexadecimal using the ft_putchar function.
 void	ft_puthex(unsigned long n, unsigned int *counter)
 {
 	unsigned long	num;

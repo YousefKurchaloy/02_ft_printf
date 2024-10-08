@@ -6,12 +6,18 @@
 /*   By: yalshish <yalshish@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:42:43 by yalshish          #+#    #+#             */
-/*   Updated: 2024/09/28 02:46:00 by yalshish         ###   ########.fr       */
+/*   Updated: 2024/10/06 10:57:16 by yalshish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// ft_putnbr is a function that takes a long long integer, a base, a hexcase,
+// and a pointer to an unsigned integer.
+// ft_putnbr will print the number in the specified base using the ft_putchar
+// function.
+// if hexcase is 0, the number will be printed in lowercase.
+// else the number will be printed in uppercase.
 void	ft_putnbr(long long n, int base, int hexcase, unsigned int *counter)
 {
 	long long	num;
