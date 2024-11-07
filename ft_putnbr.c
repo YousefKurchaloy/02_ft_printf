@@ -18,11 +18,8 @@
 // function.
 // if hexcase is 0, the number will be printed in lowercase.
 // else the number will be printed in uppercase.
-void	ft_putnbr(long long n, int base, int hexcase, unsigned int *counter)
+void	ft_putnbr(long long num, int base, int hexcase, unsigned int *counter)
 {
-	long long	num;
-
-	num = n;
 	if (num < 0)
 	{
 		ft_putchar('-', counter);
