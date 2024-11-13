@@ -31,11 +31,8 @@ void	ft_puthexp(unsigned long ptr_address, unsigned int *counter)
 // ft_puthex is a function that takes an unsigned long integer
 // and a pointer to an unsigned integer.
 // ft_puthex will print the number in hexadecimal using the ft_putchar function.
-void	ft_puthex(unsigned long n, unsigned int *counter)
+void	ft_puthex(unsigned long num, unsigned int *counter)
 {
-	unsigned long	num;
-
-	num = n;
 	while (num >= 16)
 	{
 		ft_puthex(num / 16, counter);
@@ -43,6 +40,6 @@ void	ft_puthex(unsigned long n, unsigned int *counter)
 	}
 	if (num < 10)
 		ft_putchar(num + '0', counter);
-	else
+	else if (num < 16)
 		ft_putchar(num - 10 + 'a', counter);
 }
